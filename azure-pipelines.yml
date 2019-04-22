@@ -17,8 +17,4 @@ steps:
 - script: |
     export PATH=$HOME/.local/bin:$PATH
     stack run
-  displayName: Run Package
-- script: |
-    export PATH=$HOME/.local/bin:$PATH
-    stack build
-  displayName: Build Package
+  displayName: Run Acorn
