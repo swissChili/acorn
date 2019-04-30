@@ -88,17 +88,11 @@ and then one or more [function](#functions) blocks.
 Acorn, being a functional vm, does not support classes or imperative types like structs. Instead, everything is accomplished via named union types, (e.g: haskell's `data` types). Types and their variants are named.
 
 - name: ascii null terminated string, containging characters matching regex `[a-zA-Z]`
-
 - 1 or more:
-  
   - name: ascii null terminated string, same character range as name
-  
   - types: either
-    
     - a byte corresponding to the instruction opcode to push that type to the stack. e.g: for an unsigned 32 bit int, the byte `0x03` would be used.
-    
     - a null byte (`0x00`) followed by an ascii name of the type. This type can be from an external package which was imported via the extern section in the header, or a type defined in the same package. The order of types does not matter, so a type can reference a type defined after it.
-  
   - a null byte (`0x00`)
 
 ### functions
