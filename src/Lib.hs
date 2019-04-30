@@ -5,6 +5,7 @@ import Data.List (zip)
 import Data.Map
 import Ops
 
+-- Used as utilities for stack manipulation
 drop2 = init . init
 last2 = last . init
 
@@ -17,6 +18,8 @@ run c s h (Sub:xs)       = run c sa          h xs
   where sa = (drop2 s) ++ (last2 s) `valSub` (last s)
 run c s h (Mult:xs)      = run c sa          h xs
   where sa = (drop2 s) ++ (last2 s) `valMult` (last s)
+run c s h (Div:xs)       = run c sa          h xs
+  where sa = (drop2 s) ++ (last2 s) `valDiv` (last s)
 run _ s _ _ = last s
 
 fnbody :: Function -> [Node]

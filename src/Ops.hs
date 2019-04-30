@@ -22,4 +22,16 @@ valAdd = valOp (+) (+)
 valSub = valOp (-) (-)
 
 valMult = valOp (*) (*)
---valDiv = valOp (/) (/)
+
+valDiv :: Val -> Val -> [Val]
+valDiv (Whole a) b = case b of
+  (Whole b)    -> [Floating $ af / fromIntegral b]
+  (Floating b) -> [Floating $ af / b]
+  where af = fromIntegral a
+
+valDiv (Floating a) b = case b of
+  (Whole b)    -> [Floating $ a / fromIntegral b]
+  (Floating b) -> [Floating $ a / b]
+
+valDiv a b = [a, b]
+
