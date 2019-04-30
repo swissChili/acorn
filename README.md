@@ -1,3 +1,5 @@
+![Azure Pipelines](https://img.shields.io/azure-devops/build/swissChili/f29b8e3e-443d-447c-bef9-22c28c1d6acd/1.svg?color=597fea&label=Build&style=popout)
+
 Acorn is a high level stack based virtual machine.
 
 ## assembly
